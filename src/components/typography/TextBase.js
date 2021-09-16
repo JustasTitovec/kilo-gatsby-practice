@@ -11,6 +11,6 @@ export const TextBase = styled.p`
   text-decoration: ${(props) => props.textDecoration || ''};
   text-transform: ${(props) => props.textTransform || ''};
 `;
-export const TextBaseBold = styled(TextBase).attrs(
-  (props) => props.fontWeight || 700
-)``;
+export const TextBaseBold = styled(TextBase)`
+  font-weight: 700;
+`;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { useRouter } from 'apis/history';
-import { images } from '../../utils/images';
 import { useQuery } from 'styles/breakpoints';
 import {
   Button,
@@ -36,7 +35,7 @@ const Checkout = () => {
         </PrimaryButton>
       )}
       <SecondaryButton>Click me</SecondaryButton>
-      <Image src={images.lp_image} />
+      <Image src="lp_image" />
       <H1>Heading 1</H1>
       <H2>Heading 2</H2>
       <H3>Heading 3</H3>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import LazyLoad, { forceVisible } from 'react-lazyload';
 
 import styled from 'styled-components';
-import images from '../../utils/images';
+import { images } from '../../utils/images';
 
 const Img = styled.img`
   display: block;
@@ -13,15 +13,15 @@ const Img = styled.img`
   height: ${(props) => props.height || '100%'};
 `;
 
-export const Image = ({ src, mobile }) => {
+export const Image = ({ src }) => {
   useEffect(() => {
     forceVisible();
   }, []);
 
-  return !images[src] ? null : (
+  return !images ? null : (
     <LazyLoad once>
       <picture>
-        <Img src={images[src]} alt={images[src]} />
+        <Img src={src} alt={images} />
       </picture>
     </LazyLoad>
   );

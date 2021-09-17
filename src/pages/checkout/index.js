@@ -23,7 +23,7 @@ const Checkout = () => {
 
   return (
     <SectionWrapper>
-      checkout
+      checkout typescript
       {isMobile && (
         <Link to="/">
           <Button>Click</Button>

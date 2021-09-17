@@ -20,9 +20,9 @@ export const Image = ({ src }) => {
 
   return !images ? null : (
     <LazyLoad once>
-      {/* <picture>
+      <picture>
         <Img src={images[src]} alt={images} />
-      </picture> */}
+      </picture>
     </LazyLoad>
   );
 };

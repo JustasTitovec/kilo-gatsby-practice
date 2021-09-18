@@ -10,7 +10,7 @@ interface Styles {
   background?: string;
   border?: string;
   borderRadius?: string;
-  color?: string;
+  color: string;
 }
 
 export const Button = styled.button<Styles>`

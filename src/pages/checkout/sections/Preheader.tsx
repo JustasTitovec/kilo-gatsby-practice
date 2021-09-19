@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // Images imports
 import { SideImages } from '../../../utils/images';
 
-const Preheader = () => {
+const Preheader: React.FC = () => {
   return (
     <Container>
       <img src={SideImages.discount} alt="discount" />

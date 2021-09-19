@@ -5,7 +5,7 @@ import { PhoneAppImages, SideImages } from 'utils/images.ts';
 // Data from fetching information to component
 import data from '../../../data';
 
-const AppSection = () => {
+const AppSection: React.FC = () => {
   const appCheckList = data.appCheckList;
 
   return (

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // Images imports
 import { SideImages } from 'utils/images.ts';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <Container className="header">
       <img src={SideImages.yogaLogo} alt="yoga-logo" />

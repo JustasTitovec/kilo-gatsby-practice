@@ -5,7 +5,7 @@ import QuestionItem from '../elements/QuestionItem';
 import { SecondaryButton } from '../../../components/buttons/SecondaryButton';
 import data from '../../../data';
 
-const Questions: React.FC = () => {
+const QuestionsSection: React.FC = () => {
   const questions = data.questions;
 
   return (
@@ -45,4 +45,4 @@ const Title = styled.h3`
   }
 `;
 
-export default Questions;
+export default QuestionsSection;

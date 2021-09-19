@@ -9,11 +9,7 @@ interface Props {
   subtitle: string;
 }
 
-const SubscriptionAdvantagesItem: React.FC<Props> = ({
-  ImgSrc,
-  title,
-  subtitle,
-}) => {
+const PlanBenefits: React.FC<Props> = ({ ImgSrc, title, subtitle }) => {
   return (
     <AdvantageItem>
       <img src={ImgSrc} alt="exercise" />
@@ -48,4 +44,4 @@ const AdvantageItemDescription = styled.div`
   }
 `;
 
-export default SubscriptionAdvantagesItem;
+export default PlanBenefits;

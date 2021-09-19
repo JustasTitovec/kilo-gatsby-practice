@@ -4,10 +4,10 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Preheader from './sections/Preheader';
 import Header from './sections/Header';
 import PlansOrderCount from './sections/PlansOrderCount';
-import Subscriptions from './sections/Subscriptions';
-import SuccessStories from './sections/SuccessStories';
+import PlansSection from './sections/PlansSection';
+import SuccessStoriesSection from './sections/SuccessStoriesSection';
 import AppSection from './sections/AppSection';
-import Questions from './sections/Questions';
+import QuestionsSection from './sections/QuestionsSection';
 
 const Checkout: React.FC = () => {
   return (
@@ -16,11 +16,11 @@ const Checkout: React.FC = () => {
       <Preheader />
       <Header />
       <PlansOrderCount />
-      <Subscriptions title="Get access to your yoga program now!" />
-      <SuccessStories />
+      <PlansSection title="Get access to your yoga program now!" />
+      <SuccessStoriesSection />
       <AppSection />
-      <Questions />
-      <Subscriptions title="Start your yoga program today!" />
+      <QuestionsSection />
+      <PlansSection title="Start your yoga program today!" />
     </ThemeProvider>
   );
 };

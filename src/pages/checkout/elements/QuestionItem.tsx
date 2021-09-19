@@ -17,7 +17,7 @@ interface Props {
 const QuestionItem: React.FC<Props> = ({ question, answer, index }) => {
   const [clicked, setClicked] = useState(false);
 
-  const checkWords = (text) => {
+  const checkWords = (text: string) => {
     let str = 'Positive Yoga';
     return text.replace(str, str.bold());
   };
@@ -25,7 +25,7 @@ const QuestionItem: React.FC<Props> = ({ question, answer, index }) => {
   const toggle = (index: number) => {
     if (clicked) {
       //if clicked question is already active, then close it
-      return setClicked(null);
+      return setClicked(!clicked);
     }
     setClicked(true);
   };

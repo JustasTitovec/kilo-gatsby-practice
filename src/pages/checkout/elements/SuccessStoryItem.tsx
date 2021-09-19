@@ -19,7 +19,7 @@ const SuccessStoryItem: React.FC<Props> = ({
   personImg,
   story,
 }) => {
-  const checkWords = (text) => {
+  const checkWords = (text: string) => {
     const str = 'Positive Yoga';
     return text.replace(str, str.bold());
   };

@@ -1,6 +1,4 @@
-import { ProgramAdvantagesImages } from './utils/images.ts';
-import { ReviewsImages } from './utils/images.ts';
-import { SideImages } from './utils/images.ts';
+import { PlanBenefitsImages, ReviewsImages, SideImages } from './utils/images';
 
 const data = {
   successStories: [
@@ -52,42 +50,42 @@ const data = {
       id: 13458,
     },
   ],
-  subscriptionAdvantages: [
+  PlanBenefits: [
     {
-      ImgSrc: ProgramAdvantagesImages.plan,
+      ImgSrc: PlanBenefitsImages.plan,
       title: 'A personalized yoga program',
       subtitle: 'Completely safe and focused on your key goals',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.exercise,
+      ImgSrc: PlanBenefitsImages.exercise,
       title: 'Easy & enjoyable yoga workouts for your level',
       subtitle: 'Program adjusts to your level and pace',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.shoe,
+      ImgSrc: PlanBenefitsImages.shoe,
       title: 'No special preparation needed',
       subtitle:
-        'Perfect for begginners! Requires no special preparation or equipment',
+        'Perfect for beginners! Requires no special preparation or equipment',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.diet,
+      ImgSrc: PlanBenefitsImages.diet,
       title: 'Daily motivation & accountability',
       subtitle:
         'Track your progress, develop a healthy routine, reach goals faster',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.whistle,
+      ImgSrc: PlanBenefitsImages.whistle,
       title: 'Browse from various yoga challenges',
       subtitle:
         '30 d morning yoga, mindful yoga, back flexibility challenge, and more!',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.watch,
+      ImgSrc: PlanBenefitsImages.watch,
       title: 'Easy access on any device',
       subtitle: 'Do your yoga anywhere across all types of devices',
     },
     {
-      ImgSrc: ProgramAdvantagesImages.bookCheck,
+      ImgSrc: PlanBenefitsImages.bookCheck,
       title: 'A complete guide to get started',
       subtitle:
         'Best tips, guidelines, advice, and recommendations for successful practice',
@@ -125,7 +123,7 @@ const data = {
       index: 62346,
       question: 'What happens after I order?',
       answer:
-        'After you place your order, we get to work! Based on the questions you answered in the quiz, we’ll craft your personal plan to your level with recomendations on how to improve. ',
+        'After you place your order, we get to work! Based on the questions you answered in the quiz, we’ll craft your personal plan to your level with recommendations on how to improve. ',
     },
     {
       index: 87345,

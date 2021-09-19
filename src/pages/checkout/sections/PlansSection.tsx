@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 // Components imports
-import SubscriptionPricingItem from '../elements/SubscriptionPricingItem';
-import SubscriptionAdvantages from '../elements/SubscriptionAdvantagesItem';
+import PlanCard from '../elements/PlanCard';
+import PlanBenefits from '../elements/PlanBenefits';
 import { Button } from '../../../components/buttons/Button';
 // Images imports
 import { SideImages } from '../../../utils/images';
@@ -20,7 +20,7 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
   const [option, setOption] = useState(23454);
 
   const plansTypes = data.plansTypes;
-  const advantages = data.subscriptionAdvantages;
+  const benefits = data.PlanBenefits;
 
   return (
     <Container>
@@ -33,7 +33,7 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
           </H3>
           {plansTypes.map((type, i) => {
             return (
-              <SubscriptionPricingItem
+              <PlanCard
                 key={i}
                 planDuration={type.planDurationMonths}
                 monthPrice={type.monthPrice}
@@ -63,68 +63,53 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
               By choosing a payment method you agree to the <span>T&Cs</span>{' '}
               and <span>Privacy Policy</span>
             </Caption>
-
             <img src={SideImages.paymentMethods} alt="paymentMethods" />
           </Terms>
         </Pricing>
-        <AdvantagesContainer>
+        <BenefitsContainer>
           <H3>What's in my program?</H3>
-          <Advantages>
-            {advantages.map((advantage, index) => {
+          <BenefitsWrapper>
+            {benefits.map((benefit, index) => {
               return (
-                <SubscriptionAdvantages
+                <PlanBenefits
                   key={index}
-                  ImgSrc={advantage.ImgSrc}
-                  title={advantage.title}
-                  subtitle={advantage.subtitle}
+                  ImgSrc={benefit.ImgSrc}
+                  title={benefit.title}
+                  subtitle={benefit.subtitle}
                 />
               );
             })}
-          </Advantages>
-        </AdvantagesContainer>
+          </BenefitsWrapper>
+        </BenefitsContainer>
       </Offer>
     </Container>
   );
 };
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
   @media (max-width: 768px) {
     padding: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
-    h3 {
-      font-size: 1.75rem;
-      margin: 0.5rem 0rem;
-    }
   }
 `;
 
 const PricingTrial = styled.span`
-  color: ${(props) => props.color || primaryColor};
+  color: ${primaryColor};
 `;
 
-const AdvantagesContainer = styled.div`
+const BenefitsContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const BenefitsWrapper = styled.div`
+  margin-top: 1.25rem;
 `;
 
 const Offer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-const Advantages = styled.div`
-  margin-top: 1.25rem;
+  flex-wrap: wrap;
 `;
 
 const Pricing = styled.div`
@@ -139,7 +124,6 @@ const Pricing = styled.div`
   }
   @media (max-width: 768px) {
     margin-right: 0rem;
-
     width: 21.875rem;
     h3 {
       font-size: 1.25rem;
@@ -189,6 +173,8 @@ const ContainerTitle = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 1.75rem;
+  }
+  @media (max-width: 450px) {
     text-align: left;
   }
 `;

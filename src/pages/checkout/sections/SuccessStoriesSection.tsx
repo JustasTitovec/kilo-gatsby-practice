@@ -6,13 +6,13 @@ import SuccessStoryItem from '../elements/SuccessStoryItem';
 // Data from fetching information to component
 import data from '../../../data';
 
-const SuccessStories: React.FC = () => {
+const SuccessStoriesSection: React.FC = () => {
   let stories = data.successStories;
 
   return (
     <SuccessStoriesContainer>
       <h3>Hear success stories from our clients</h3>
-      <SuccessStoriesSection>
+      <SuccessStories>
         {stories.map((story) => {
           return (
             <SuccessStoryItem
@@ -25,13 +25,13 @@ const SuccessStories: React.FC = () => {
             />
           );
         })}
-      </SuccessStoriesSection>
+      </SuccessStories>
       <SecondaryButton>Get my plan</SecondaryButton>
     </SuccessStoriesContainer>
   );
 };
 
-const SuccessStoriesSection = styled.section`
+const SuccessStories = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -64,4 +64,4 @@ const SuccessStoriesContainer = styled.div`
   }
 `;
 
-export default SuccessStories;
+export default SuccessStoriesSection;

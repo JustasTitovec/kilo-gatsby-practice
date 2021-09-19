@@ -6,7 +6,7 @@ interface Props {
   children: any;
   className?: string;
 }
-interface Style {
+interface Styles {
   backgroundColor?: string;
 }
 
@@ -14,7 +14,7 @@ export const Button: React.FC<Props> = ({ children, className }) => {
   return <PrimaryButton className={className}>{children}</PrimaryButton>;
 };
 
-const PrimaryButton = styled.button<Style>`
+const PrimaryButton = styled.button<Styles>`
   padding: 0.5rem, 2.5rem, 0.5rem, 2.5rem;
   font-size: 1rem;
   color: #ffffff;

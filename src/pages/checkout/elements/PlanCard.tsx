@@ -14,7 +14,7 @@ interface Props {
   setOption: (index: number) => void;
 }
 
-const SubscriptionPricingItem: React.FC<Props> = ({
+const PlanCard: React.FC<Props> = ({
   planDuration,
   monthPrice,
   priceWithoutDiscount,
@@ -154,4 +154,4 @@ const CheckIcon = styled(CheckCircleIcon)`
   color: ${primaryColor};
 `;
 
-export default SubscriptionPricingItem;
+export default PlanCard;

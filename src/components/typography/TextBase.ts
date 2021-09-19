@@ -19,6 +19,7 @@ export const TextBase = styled.p<Styles>`
   text-decoration: ${({ textDecoration }) => textDecoration || ''};
   text-transform: ${({ textTransform }) => textTransform || ''};
 `;
+
 export const TextBaseBold = styled(TextBase).attrs(
   ({ fontWeight }: Styles) => ({
     fontWeight: fontWeight || 700,

@@ -6,5 +6,5 @@ interface Styles {
 }
 
 export const SecondaryButton = styled(Button)<Styles>`
-  margin: ${(props) => props.margin || '3rem 0rem'};
+  margin: ${({ margin }) => margin || '3rem 0rem'};
 `;

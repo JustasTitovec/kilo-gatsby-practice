@@ -21,7 +21,7 @@ import phoneApp2 from 'assets/images/phoneApp2.svg';
 import ratingStar from 'assets/images/ratingStar.svg';
 import background from 'assets/images/background.svg';
 
-export const ProgramAdvantagesImages: Record<string, string> = {
+export const PlanBenefitsImages: Record<string, string> = {
   plan,
   exercise,
   shoe,

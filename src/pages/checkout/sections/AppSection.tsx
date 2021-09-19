@@ -1,13 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images
-// import phoneApp1 from '../assets/phoneApp1.svg';
-// import phoneApp2 from '../assets/phoneApp2.svg';
-// import background from '../assets/background.svg';
+import { PhoneAppImages } from 'utils/images.ts';
 // Data from fetching information to component
 import data from '../../../data';
 
-import { PhoneAppImages } from 'utils/images.ts';
+const AppSection = () => {
+  const appCheckList = data.appCheckList;
+
+  return (
+    <AppReviewContainer>
+      <PhoneAppSide>
+        <h3>Start your yoga journey now!</h3>
+        <AppIcons>
+          <AppIconsBackground>
+            {/* <img src={background} alt="phoneApp" /> */}
+          </AppIconsBackground>
+          <AppIconsLeft>
+            <img src={PhoneAppImages.phoneApp1} alt="phoneApp" />
+          </AppIconsLeft>
+          <AppIconsRight>
+            <img src={PhoneAppImages.phoneApp2} alt="phoneApp" />
+          </AppIconsRight>
+        </AppIcons>
+      </PhoneAppSide>
+
+      <AppCheckList>
+        <h3>Is Positive Yoga right for me?</h3>
+        <div>
+          {appCheckList.map((checkItem, i) => {
+            return (
+              <CheckItem key={i}>
+                <CheckItemTextImage src={checkItem.checkImage} alt="checkImg" />
+                <CheckItemText>{checkItem.checkItemDescription}</CheckItemText>
+              </CheckItem>
+            );
+          })}
+        </div>
+      </AppCheckList>
+    </AppReviewContainer>
+  );
+};
 
 const AppReviewContainer = styled.div`
   display: flex;
@@ -114,42 +147,5 @@ const CheckItemText = styled.ul`
   line-height: 20px;
   color: #424242;
 `;
-
-const AppSection = () => {
-  const appCheckList = data.appCheckList;
-
-  return (
-    <AppReviewContainer>
-      <PhoneAppSide>
-        <h3>Start your yoga journey now!</h3>
-        <AppIcons>
-          <AppIconsBackground>
-            {/* <img src={background} alt="phoneApp" /> */}
-          </AppIconsBackground>
-          <AppIconsLeft>
-            <img src={PhoneAppImages.phoneApp1} alt="phoneApp" />
-          </AppIconsLeft>
-          <AppIconsRight>
-            <img src={PhoneAppImages.phoneApp2} alt="phoneApp" />
-          </AppIconsRight>
-        </AppIcons>
-      </PhoneAppSide>
-
-      <AppCheckList>
-        <h3>Is Positive Yoga right for me?</h3>
-        <div>
-          {appCheckList.map((checkItem, i) => {
-            return (
-              <CheckItem key={i}>
-                <CheckItemTextImage src={checkItem.checkImage} alt="checkImg" />
-                <CheckItemText>{checkItem.checkItemDescription}</CheckItemText>
-              </CheckItem>
-            );
-          })}
-        </div>
-      </AppCheckList>
-    </AppReviewContainer>
-  );
-};
 
 export default AppSection;

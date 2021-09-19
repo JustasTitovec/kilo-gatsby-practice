@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  children: any;
+  className?: string;
+}
+
+export const Button: React.FC<Props> = ({ children, className }) => {
+  return <PrimaryButton className={className}>{children}</PrimaryButton>;
+};
+
 const PrimaryButton = styled.button`
   padding: 8px, 40px, 8px, 40px;
   font-size: 16px;
@@ -23,9 +32,3 @@ const PrimaryButton = styled.button`
     transform: translateY(2px);
   }
 `;
-
-const Button = ({ children, className }) => {
-  return <PrimaryButton className={className}>{children}</PrimaryButton>;
-};
-
-export default Button;

@@ -9,21 +9,7 @@ import SuccessStories from './sections/SuccessStories';
 import AppSection from './sections/AppSection';
 import Questions from './sections/Questions';
 
-const Global = createGlobalStyle`
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-`;
-
-const theme = {
-  fontColour: '#FF9B4E',
-  fontSizeSmall: '12px',
-};
-
-const Checkout = () => {
+const Checkout: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global />
@@ -37,6 +23,20 @@ const Checkout = () => {
       <Subscriptions title="Start your yoga program today!" />
     </ThemeProvider>
   );
+};
+
+const Global = createGlobalStyle`
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+`;
+
+const theme = {
+  fontColour: '#FF9B4E',
+  fontSizeSmall: '12px',
 };
 
 export default Checkout;

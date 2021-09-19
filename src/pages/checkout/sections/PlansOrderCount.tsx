@@ -1,6 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const PlansOrderCount = () => {
+  return (
+    <PlansOrderCountItem>
+      <p>
+        Over <span> 52 147</span> plans ordered.
+      </p>
+    </PlansOrderCountItem>
+  );
+};
+
 const PlansOrderCountItem = styled.div`
   display: flex;
   justify-content: center;
@@ -19,16 +29,5 @@ const PlansOrderCountItem = styled.div`
     font-weight: 600;
   }
 `;
-
-const PlansOrderCount = () => {
-  return (
-    <PlansOrderCountItem>
-      <p>
-        {' '}
-        Over <span> 52 147</span> plans ordered.
-      </p>
-    </PlansOrderCountItem>
-  );
-};
 
 export default PlansOrderCount;

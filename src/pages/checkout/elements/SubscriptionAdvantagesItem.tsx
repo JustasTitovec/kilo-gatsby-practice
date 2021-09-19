@@ -1,6 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  ImgSrc: string;
+  title: string;
+  subtitle: string;
+}
+
+const SubscriptionAdvantagesItem: React.FC<Props> = ({
+  ImgSrc,
+  title,
+  subtitle,
+}) => {
+  return (
+    <AdvantageItem>
+      <img src={ImgSrc} alt="exercise" />
+      <AdvantageItemDescription>
+        <h5>{title}</h5>
+        <p>{subtitle}</p>
+      </AdvantageItemDescription>
+    </AdvantageItem>
+  );
+};
+
 const AdvantageItem = styled.div`
   display: flex;
   align-items: center;
@@ -36,16 +58,4 @@ const AdvantageItemDescription = styled.div`
   }
 `;
 
-const SubscriptionAdvantages = ({ ImgSrc, title, subtitle }) => {
-  return (
-    <AdvantageItem>
-      <img src={ImgSrc} alt="exercise" />
-      <AdvantageItemDescription>
-        <h5>{title}</h5>
-        <p>{subtitle}</p>
-      </AdvantageItemDescription>
-    </AdvantageItem>
-  );
-};
-
-export default SubscriptionAdvantages;
+export default SubscriptionAdvantagesItem;

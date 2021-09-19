@@ -4,6 +4,43 @@ import styled from 'styled-components';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
+interface Props {
+  index: number;
+  question: string;
+  answer: string;
+}
+
+const QuestionItem: React.FC<Props> = ({ question, answer, index }) => {
+  const [clicked, setClicked] = useState(false);
+
+  const checkWords = (text) => {
+    let str = 'Positive Yoga';
+    return text.replace(str, str.bold());
+  };
+
+  const toggle = (index: number) => {
+    if (clicked) {
+      //if clicked question is already active, then close it
+      return setClicked(null);
+    }
+    setClicked(true);
+  };
+
+  return (
+    <Question>
+      <Wrap onClick={() => toggle(index)}>
+        <h5>{question}</h5>
+        <span>{clicked ? <ExpandLessIcon /> : <KeyboardArrowDownIcon />}</span>
+      </Wrap>
+      <div>
+        {clicked ? (
+          <p dangerouslySetInnerHTML={{ __html: checkWords(answer) }}></p>
+        ) : null}
+      </div>
+    </Question>
+  );
+};
+
 const Question = styled.div`
   width: 740px;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -45,36 +82,5 @@ const Wrap = styled.div`
     }
   }
 `;
-
-const QuestionItem = ({ question, answer, index }) => {
-  const [clicked, setClicked] = useState(false);
-
-  const checkWords = (text) => {
-    let str = 'Positive Yoga';
-    return text.replace(str, str.bold());
-  };
-
-  const toggle = (index) => {
-    if (clicked) {
-      //if clicked question is already active, then close it
-      return setClicked(null);
-    }
-    setClicked(index);
-  };
-
-  return (
-    <Question index={index}>
-      <Wrap onClick={() => toggle(index)}>
-        <h5>{question}</h5>
-        <span>{clicked ? <ExpandLessIcon /> : <KeyboardArrowDownIcon />}</span>
-      </Wrap>
-      <div>
-        {clicked ? (
-          <p dangerouslySetInnerHTML={{ __html: checkWords(answer) }}></p>
-        ) : null}
-      </div>
-    </Question>
-  );
-};
 
 export default QuestionItem;

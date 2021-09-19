@@ -34,9 +34,6 @@ const Global = createGlobalStyle`
 }
 `;
 
-const theme = {
-  fontColour: '#FF9B4E',
-  fontSizeSmall: '12px',
-};
+const theme = {};
 
 export default Checkout;

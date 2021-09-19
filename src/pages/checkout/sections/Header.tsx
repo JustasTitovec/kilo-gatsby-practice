@@ -16,9 +16,9 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 72px;
+  height: 4.5rem;
   background-color: #ffffff;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.04);
 `;
 
 export default Header;

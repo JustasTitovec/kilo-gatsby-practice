@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images imports
-import { SideImages } from 'utils/images.ts';
+import { SideImages } from '../../../utils/images';
+import { Caption, H5 } from '../../../components';
 
 interface Props {
   name: string;
@@ -25,8 +26,8 @@ const SuccessStoryItem: React.FC<Props> = ({
 
   return (
     <SuccessStory>
-      <h5>{name}</h5>
-      <span>{place}</span>
+      <H5>{name}</H5>
+      <Caption>{place}</Caption>
       <Rating>
         <span>
           {ratingValue >= 1 ? (
@@ -63,43 +64,31 @@ const SuccessStoryItem: React.FC<Props> = ({
 };
 
 const SuccessStory = styled.div`
-  margin-right: 16px;
-  margin-bottom: 20px;
-  width: 320px;
-  padding: 16px;
+  margin-right: 1rem;
+  margin-bottom: 1.25rem;
+  width: 20rem;
+  padding: 1rem;
   background: #ffffff;
-  box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
-  border-radius: 16px;
+  box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
+  border-radius: 1rem;
   @media (max-width: 768px) {
-    margin-bottom: 16px;
-    margin-right: 0px;
+    margin-bottom: 1rem;
+    margin-right: 0rem;
   }
   @media (max-width: 450px) {
     width: 100%;
   }
-  h5 {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: -0.4000000059604645px;
-    text-align: left;
-  }
-  span {
-    font-size: 12px;
-    opacity: 0.64;
-  }
 `;
 
 const SuccessStoryText = styled.p`
-  margin-top: 16px;
-  font-size: 16px;
+  margin-top: 1rem;
+  font-size: 1rem;
   font-weight: 200;
-  line-height: 24px;
+  line-height: 1.5rem;
 `;
 
 const Rating = styled.div`
-  margin-top: 18px;
+  margin-top: 1.125rem;
 `;
 
 export default SuccessStoryItem;

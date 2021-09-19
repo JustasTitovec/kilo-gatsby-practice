@@ -14,15 +14,15 @@ const PlansOrderCount = () => {
 const PlansOrderCountItem = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 3rem;
   @media (max-width: 450px) {
     width: 100%;
-    padding: 0px 16px;
-    margin-top: 16px;
+    padding: 0rem 1rem;
+    margin-top: 1rem;
     justify-content: flex-start;
   }
   p {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 200;
   }
   span {

@@ -49,17 +49,17 @@ const SuccessStoriesContainer = styled.div`
   align-items: center;
 
   h3 {
-    font-size: 24px;
-    margin: 24px 0px;
+    font-size: 1.5rem;
+    margin: 1.5rem 0rem;
     color: #22222c;
   }
 
   @media (max-width: 768px) {
-    padding: 0px 16px;
+    padding: 0rem 1rem;
 
     h3 {
-      padding: 0px 13px;
-      font-size: 20px;
+      padding: 0rem 0.813rem;
+      font-size: 1.25rem;
     }
   }
 `;

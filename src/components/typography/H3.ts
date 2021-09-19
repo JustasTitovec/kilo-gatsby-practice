@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import { TextBase } from './TextBase';
 
 export const H3 = styled(TextBase)`
-  font-size: 24px;
-  margin: 24px 0px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-    padding: 0px 16px;
-  }
+  font-size: 1.5rem;
+  margin: 1.5rem 0rem;
+  font-weight: 600;
 `;

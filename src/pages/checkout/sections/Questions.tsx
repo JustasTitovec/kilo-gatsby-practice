@@ -32,17 +32,16 @@ const QuestionsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 16px;
-  margin-top: 10rem;
+  padding: 0rem 1rem;
 `;
 
 const Title = styled.h3`
-  font-size: 24px;
-  margin: 8px 0px;
+  font-size: 1.5rem;
+  margin: 0.5rem 0rem;
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 1.25rem;
     width: 100%;
-    padding: 0px 16px;
+    padding: 0rem 1rem;
   }
 `;
 

@@ -1,4 +1,4 @@
-export const primary = '#15DA70';
-export const text = '#000000';
-export const white = '#ffffff';
-export const green = '#00FF00';
+export const primaryColor = '#FF9B4E';
+export const text = '#22222c';
+
+export const textTransparent = 'rgba(0, 0, 0, 0.08)';

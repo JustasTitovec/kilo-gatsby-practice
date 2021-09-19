@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+// Typography
+import { Caption, H5 } from '../../../components/index';
 
 interface Props {
   ImgSrc: string;
@@ -16,8 +18,8 @@ const SubscriptionAdvantagesItem: React.FC<Props> = ({
     <AdvantageItem>
       <img src={ImgSrc} alt="exercise" />
       <AdvantageItemDescription>
-        <h5>{title}</h5>
-        <p>{subtitle}</p>
+        <H5>{title}</H5>
+        <Caption>{subtitle}</Caption>
       </AdvantageItemDescription>
     </AdvantageItem>
   );
@@ -26,33 +28,21 @@ const SubscriptionAdvantagesItem: React.FC<Props> = ({
 const AdvantageItem = styled.div`
   display: flex;
   align-items: center;
-  line-height: 24px;
-  margin-bottom: 10px;
-  width: 350px;
+  line-height: 1.5rem;
+  margin-bottom: 0.625rem;
+  width: 21.875rem;
   @media (max-width: 480px) {
     width: 100%;
   }
   img {
-    margin-right: 16px;
-  }
-  div {
-    p {
-      font-size: 12px;
-      line-height: 20px;
-      font-weight: 200;
-      color: #22222c;
-    }
+    margin-right: 1rem;
   }
 `;
 
 const AdvantageItemDescription = styled.div`
-  h5 {
-    font-size: 16px;
-    font-weight: 600;
-  }
   @media (max-width: 480px) {
     h5 {
-      font-size: 15px;
+      font-size: 1.25rem;
       font-weight: 600;
     }
   }

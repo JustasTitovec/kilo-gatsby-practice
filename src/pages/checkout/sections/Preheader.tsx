@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images imports
-import { SideImages } from 'utils/images.ts';
+import { SideImages } from '../../../utils/images';
 
 const Preheader = () => {
   return (
@@ -19,19 +19,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 56px;
+  height: 3.5rem;
   background-color: #90caf9;
+  span {
+    font-weight: 400;
+  }
   img {
-    margin-right: 18px;
+    margin-right: 1.125rem;
   }
   p {
     color: #ffffff;
-    font-size: 15px;
+    font-size: 0.938rem;
     font-weight: 200;
-    letter-spacing: 0.5px;
-    span {
-      font-weight: 400;
-    }
+    letter-spacing: 0.031rem;
   }
 `;
 

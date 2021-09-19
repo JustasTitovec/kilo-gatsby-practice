@@ -3,6 +3,10 @@ import styled from 'styled-components';
 // Icons imports from Material UI
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+// Typography
+import { Small, H5 } from '../../../components/index';
+// Breakpoints
+// import { tablet } from '../../../styles/breakpoints';
 
 interface Props {
   index: number;
@@ -29,12 +33,15 @@ const QuestionItem: React.FC<Props> = ({ question, answer, index }) => {
   return (
     <Question>
       <Wrap onClick={() => toggle(index)}>
-        <h5>{question}</h5>
+        <H5>{question}</H5>
         <span>{clicked ? <ExpandLessIcon /> : <KeyboardArrowDownIcon />}</span>
       </Wrap>
       <div>
         {clicked ? (
-          <p dangerouslySetInnerHTML={{ __html: checkWords(answer) }}></p>
+          <Small
+            marginTop="0.5rem"
+            dangerouslySetInnerHTML={{ __html: checkWords(answer) }}
+          ></Small>
         ) : null}
       </div>
     </Question>
@@ -42,22 +49,15 @@ const QuestionItem: React.FC<Props> = ({ question, answer, index }) => {
 };
 
 const Question = styled.div`
-  width: 740px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
-  margin: 4px 0px;
-  padding: 16px;
+  width: 46.25rem;
+  border: 0.063rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  margin: 0.25rem 0rem;
+  padding: 1rem;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 48rem) {
     width: 95%;
-  }
-
-  p {
-    font-size: 14px;
-    font-weight: 200;
-    line-height: 20px;
-    margin-top: 16px;
   }
 `;
 
@@ -65,21 +65,9 @@ const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h5 {
-    font-size: 16px;
-    font-weight: 600;
-  }
   span {
     color: #424242;
-    margin-right: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  @media (max-width: 768px) {
-    h5 {
-      font-size: 15px;
-    }
+    margin-right: 0.375rem;
   }
 `;
 

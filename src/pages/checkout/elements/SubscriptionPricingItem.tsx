@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 // Images imports
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+// Colors
+import { primaryColor, textTransparent } from '../../../styles/colors';
 
 interface Props {
   planDuration: number;
@@ -25,8 +27,8 @@ const SubscriptionPricingItem: React.FC<Props> = ({
       onClick={() => setOption(index)}
       style={
         option === index
-          ? { border: '2px solid #ff9b4e' }
-          : { border: '2px solid rgba(0, 0, 0, 0.08)' }
+          ? { border: `0.125rem solid ${primaryColor}` }
+          : { border: `0.125rem solid ${textTransparent}` }
       }
     >
       <PlanItem>
@@ -72,10 +74,10 @@ const SubscriptionPricingItem: React.FC<Props> = ({
 const Option = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 131px;
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 8px;
+  height: 8.125rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
   cursor: pointer;
 
   @media (max-width: 480px) {
@@ -84,9 +86,9 @@ const Option = styled.div`
   }
 
   .checkCircle {
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0.08);
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: ${textTransparent};
     border-radius: 50%;
   }
 `;
@@ -96,34 +98,34 @@ const PlanItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   h5 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     span {
       background-color: #ffe082;
-      padding: 5px;
-      border-radius: 6px;
-      font-size: 12px;
+      padding: 0.313rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      margin: 0px 8px;
+      margin: 0rem 0.5rem;
     }
   }
 
   h2 {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
 
     span {
-      font-size: 32px;
+      font-size: 2rem;
       font-weight: 700;
     }
   }
   @media (max-width: 480px) {
     h5 {
-      font-size: 15px;
+      font-size: 0.938rem;
     }
     h2 {
       span {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
   }
@@ -136,11 +138,11 @@ const SelectedItemCheck = styled.div`
 `;
 
 const PricingDeal = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   span {
-    margin-left: 8px;
-    color: ${(props) => props.theme.fontColour};
+    margin-left: 0.5rem;
+    color: ${primaryColor};
     font-weight: 700;
   }
   @media (max-width: 320px) {
@@ -149,7 +151,7 @@ const PricingDeal = styled.p`
 `;
 
 const CheckIcon = styled(CheckCircleIcon)`
-  color: ${(props) => props.theme.fontColour};
+  color: ${primaryColor};
 `;
 
 export default SubscriptionPricingItem;

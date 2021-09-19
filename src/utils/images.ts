@@ -19,6 +19,7 @@ import phoneApp1 from 'assets/images/phoneApp1.svg';
 import phoneApp2 from 'assets/images/phoneApp2.svg';
 
 import ratingStar from 'assets/images/ratingStar.svg';
+import background from 'assets/images/background.svg';
 
 export const ProgramAdvantagesImages: Record<string, string> = {
   plan,
@@ -42,6 +43,7 @@ export const SideImages: Record<string, string> = {
   paymentMethods,
   yogaLogo,
   ratingStar,
+  background,
 };
 
 export const PhoneAppImages: Record<string, string> = {

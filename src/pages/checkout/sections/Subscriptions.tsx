@@ -5,12 +5,13 @@ import SubscriptionPricingItem from '../elements/SubscriptionPricingItem';
 import SubscriptionAdvantages from '../elements/SubscriptionAdvantagesItem';
 import { Button } from '../../../components/buttons/Button';
 // Images imports
-import { SideImages } from 'utils/images.ts';
+import { SideImages } from '../../../utils/images';
 // Data from fetching information to component
 import data from '../../../data';
 // Typography
-import { H3 } from '../../../components/typography/H3';
-
+import { H3, Caption } from '../../../components';
+// Colors
+import { primaryColor } from '../../../styles/colors';
 interface Props {
   title: string;
 }
@@ -27,7 +28,8 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
       <Offer>
         <Pricing>
           <H3>
-            Choose your plan and get <span>7 days free trial</span>
+            Choose your plan and get{' '}
+            <PricingTrial>7 days free trial</PricingTrial>
           </H3>
           {plansTypes.map((type, i) => {
             return (
@@ -44,40 +46,42 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
           })}
           <Button>Get your plan</Button>
           <Terms>
-            <p className="screen-mobile">
+            <Caption opacity={1} className="screen-mobile">
               After 7 days free trial subscription payment is automatically
               charged from your account unless it is canceled at least 24 hours
               before the end of the trial period.
-            </p>
-          </Terms>
-          <Terms>
-            <p className="screen-desktop">
+            </Caption>
+
+            <Caption opacity={1} className="screen-desktop">
               Your free trial will automatically become a paid subscription on
               the 8th day after you begin your trial. To cancel your
               subscription, please contact us at least 24 hours before the end
               of the trial period.
-            </p>
-          </Terms>
-          <Terms>
-            By choosing a payment method you agree to the <span>T&Cs</span> and{' '}
-            <span>Privacy Policy</span>
+            </Caption>
+            <br></br>
+            <Caption opacity={1}>
+              By choosing a payment method you agree to the <span>T&Cs</span>{' '}
+              and <span>Privacy Policy</span>
+            </Caption>
+
             <img src={SideImages.paymentMethods} alt="paymentMethods" />
           </Terms>
         </Pricing>
-
-        <Advantages>
+        <AdvantagesContainer>
           <H3>What's in my program?</H3>
-          {advantages.map((advantage, index) => {
-            return (
-              <SubscriptionAdvantages
-                key={index}
-                ImgSrc={advantage.ImgSrc}
-                title={advantage.title}
-                subtitle={advantage.subtitle}
-              />
-            );
-          })}
-        </Advantages>
+          <Advantages>
+            {advantages.map((advantage, index) => {
+              return (
+                <SubscriptionAdvantages
+                  key={index}
+                  ImgSrc={advantage.ImgSrc}
+                  title={advantage.title}
+                  subtitle={advantage.subtitle}
+                />
+              );
+            })}
+          </Advantages>
+        </AdvantagesContainer>
       </Offer>
     </Container>
   );
@@ -87,48 +91,60 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 768px) {
-    padding: 16px;
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {
     width: 100%;
     h3 {
-      font-size: 28px;
-      margin: 8px 0px;
+      font-size: 1.75rem;
+      margin: 0.5rem 0rem;
     }
   }
+`;
+
+const PricingTrial = styled.span`
+  color: ${(props) => props.color || primaryColor};
+`;
+
+const AdvantagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Offer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 2rem;
+
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 0px;
     align-items: center;
   }
 `;
 
-const Advantages = styled.div``;
+const Advantages = styled.div`
+  margin-top: 1.25rem;
+`;
 
 const Pricing = styled.div`
-  margin-right: 38px;
-  width: 350px;
+  margin-right: 2.375rem;
+  width: 21.875rem;
   h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     span {
       color: ${(props) => props.theme.fontColour};
       font-weight: 700;
     }
   }
   @media (max-width: 768px) {
-    margin-right: 0px;
-    width: 350px;
+    margin-right: 0rem;
+
+    width: 21.875rem;
     h3 {
-      font-size: 20px;
-      margin: 16px 0px;
-      line-height: 28px;
+      font-size: 1.25rem;
+      margin: 1rem 0rem;
+      line-height: 1.75rem;
       span {
         color: ${(props) => props.theme.fontColour};
       }
@@ -141,18 +157,14 @@ const Pricing = styled.div`
 
 const Terms = styled.div`
   width: 100%;
-  font-size: 12px;
   text-align: center;
-  line-height: 18px;
-  letter-spacing: 0.5px;
-  margin: 8px 0px;
-  font-weight: 200;
+  margin: 0.5rem 0rem;
   span {
     color: #90caf9;
     cursor: pointer;
   }
   img {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     width: 100%;
   }
   .screen-desktop {
@@ -171,15 +183,13 @@ const Terms = styled.div`
 `;
 
 const ContainerTitle = styled.h1`
-  margin: 8px 0px;
+  margin: 0.5rem 0rem;
   text-align: center;
-  font-size: 40px;
-  @media (max-width: 480px) {
-    text-align: left;
-    font-size: 28px;
-  }
+  font-size: 2.5rem;
+
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 1.75rem;
+    text-align: left;
   }
 `;
 

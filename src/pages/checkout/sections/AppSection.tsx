@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images
-import { PhoneAppImages } from 'utils/images.ts';
+import { PhoneAppImages, SideImages } from 'utils/images.ts';
 // Data from fetching information to component
 import data from '../../../data';
 
@@ -14,7 +14,7 @@ const AppSection = () => {
         <h3>Start your yoga journey now!</h3>
         <AppIcons>
           <AppIconsBackground>
-            {/* <img src={background} alt="phoneApp" /> */}
+            <img src={SideImages.background} alt="phoneApp" />
           </AppIconsBackground>
           <AppIconsLeft>
             <img src={PhoneAppImages.phoneApp1} alt="phoneApp" />
@@ -52,15 +52,15 @@ const AppReviewContainer = styled.div`
 `;
 
 const PhoneAppSide = styled.div`
-  margin: 0px 32px;
+  margin: 0rem 2rem;
   h3 {
-    font-size: 24px;
-    margin: 24px 0px;
+    font-size: 1.5rem;
+    margin: 1.5rem 0rem;
   }
   @media (max-width: 768px) {
     h3 {
-      font-size: 20px;
-      padding: 0px 16px;
+      font-size: 1.25rem;
+      padding: 0rem 1rem;
     }
   }
 `;
@@ -79,7 +79,7 @@ const AppIconsBackground = styled.div`
   }
   @media (max-width: 320px) {
     img {
-      width: 320px;
+      width: 20rem;
     }
   }
 `;
@@ -89,38 +89,38 @@ const AppCheckList = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 0px 16px;
-  width: 360px;
+  padding: 0rem 1rem;
+  width: 22.5rem;
   h3 {
-    font-size: 24px;
-    margin: 24px 0px;
+    font-size: 1.5rem;
+    margin: 1.5rem 0rem;
   }
   @media (max-width: 768px) {
     h3 {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
   @media (max-width: 450px) {
-    margin: 0px 16px;
+    margin: 0rem 1rem;
     width: 100%;
   }
 `;
 
 const AppIconsLeft = styled.div`
   position: absolute;
-  margin-top: -10px;
+  margin-top: -0.625rem;
   @media (max-width: 320px) {
     img {
-      width: 160px;
-      margin-left: 13px;
+      width: 10rem;
+      margin-left: 0.813rem;
     }
   }
 `;
 
 const AppIconsRight = styled.div`
   position: absolute;
-  margin-top: 45px;
-  margin-left: 194px;
+  margin-top: 2.813rem;
+  margin-left: 12.125rem;
   @media (max-width: 320px) {
     img {
       width: 130px;
@@ -132,19 +132,19 @@ const AppIconsRight = styled.div`
 const CheckItem = styled.li`
   display: flex;
   list-style: none;
-  margin: 8px 0px;
+  margin: 0.5rem 0rem;
   align-items: center;
 `;
 
 const CheckItemTextImage = styled.img`
-  margin-right: 16px;
+  margin-right: 1rem;
 `;
 
 const CheckItemText = styled.ul`
   font-weight: 200;
-  font-size: 14px;
-  letter-spacing: 0.4px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  letter-spacing: 0.025rem;
+  line-height: 1.25rem;
   color: #424242;
 `;
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 // Components imports
-import { SecondaryButton } from '../../../components/buttons/SecondaryButton';
+import { SecondaryButton } from 'components/buttons/SecondaryButton';
 import SuccessStoryItem from '../elements/SuccessStoryItem';
 // Data from fetching information to component
-import data from '../../../data';
+import data from 'data';
+// Breakpoints
+import { tablet } from 'styles/breakpoints';
 
 const SuccessStoriesSection: React.FC = () => {
   let stories = data.successStories;
@@ -36,7 +38,7 @@ const SuccessStories = styled.section`
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @media ${tablet} {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -54,7 +56,7 @@ const SuccessStoriesContainer = styled.div`
     color: #22222c;
   }
 
-  @media (max-width: 768px) {
+  @media ${tablet} {
     padding: 0rem 1rem;
 
     h3 {

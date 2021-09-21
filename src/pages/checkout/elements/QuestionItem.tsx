@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 // Typography
-import { Small, H5 } from '../../../components/index';
+import { Small, H5 } from 'components/index';
 // Breakpoints
-// import { tablet } from '../../../styles/breakpoints';
+import { tablet } from 'styles/breakpoints';
 
 interface Props {
   index: number;
@@ -56,7 +56,7 @@ const Question = styled.div`
   padding: 1rem;
   cursor: pointer;
 
-  @media (max-width: 48rem) {
+  @media ${tablet} {
     width: 95%;
   }
 `;

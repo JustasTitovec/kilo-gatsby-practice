@@ -15,6 +15,7 @@ export * from './typography/H5';
 export * from './typography/Regular';
 export * from './typography/Caption';
 export * from './typography/Small';
+export * from './typography/TextWrapper';
 
 // Wrappers
 export * from './wrappers/Container';

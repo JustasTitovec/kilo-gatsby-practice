@@ -3,7 +3,9 @@ import styled from 'styled-components';
 // Images
 import { PhoneAppImages, SideImages } from 'utils/images.ts';
 // Data from fetching information to component
-import data from '../../../data';
+import data from 'data';
+// Breakpoints
+import { smMobile, mobile, tablet } from 'styles/breakpoints';
 
 const AppSection: React.FC = () => {
   const appCheckList = data.appCheckList;
@@ -17,10 +19,10 @@ const AppSection: React.FC = () => {
             <img src={SideImages.background} alt="phoneApp" />
           </AppIconsBackground>
           <AppIconsLeft>
-            <img src={PhoneAppImages.phoneApp1} alt="phoneApp" />
+            <img src={PhoneAppImages.phone_app_1} alt="phoneApp" />
           </AppIconsLeft>
           <AppIconsRight>
-            <img src={PhoneAppImages.phoneApp2} alt="phoneApp" />
+            <img src={PhoneAppImages.phone_app_2} alt="phoneApp" />
           </AppIconsRight>
         </AppIcons>
       </PhoneAppSide>
@@ -45,7 +47,7 @@ const AppSection: React.FC = () => {
 const AppReviewContainer = styled.div`
   display: flex;
   justify-content: center;
-  @media (max-width: 768px) {
+  @media ${tablet} {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -57,7 +59,7 @@ const PhoneAppSide = styled.div`
     font-size: 1.5rem;
     margin: 1.5rem 0rem;
   }
-  @media (max-width: 768px) {
+  @media ${tablet} {
     h3 {
       font-size: 1.25rem;
       padding: 0rem 1rem;
@@ -74,10 +76,10 @@ const AppIcons = styled.div`
 const AppIconsBackground = styled.div`
   position: relative;
   visibility: hidden;
-  @media (max-width: 768px) {
+  @media ${tablet} {
     visibility: visible;
   }
-  @media (max-width: 320px) {
+  @media ${smMobile} {
     img {
       width: 20rem;
     }
@@ -95,12 +97,12 @@ const AppCheckList = styled.div`
     font-size: 1.5rem;
     margin: 1.5rem 0rem;
   }
-  @media (max-width: 768px) {
+  @media ${tablet} {
     h3 {
       font-size: 1.25rem;
     }
   }
-  @media (max-width: 450px) {
+  @media ${mobile} {
     margin: 0rem 1rem;
     width: 100%;
   }
@@ -109,7 +111,7 @@ const AppCheckList = styled.div`
 const AppIconsLeft = styled.div`
   position: absolute;
   margin-top: -0.625rem;
-  @media (max-width: 320px) {
+  @media ${smMobile} {
     img {
       width: 10rem;
       margin-left: 0.813rem;
@@ -121,7 +123,7 @@ const AppIconsRight = styled.div`
   position: absolute;
   margin-top: 2.813rem;
   margin-left: 12.125rem;
-  @media (max-width: 320px) {
+  @media ${smMobile} {
     img {
       width: 130px;
       margin-left: -0px;

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 // Typography
-import { Caption, H5 } from '../../../components/index';
+import { Caption, H5 } from 'components/index';
+// Breakpoints
+import { mobile } from 'styles/breakpoints';
 
 interface Props {
   ImgSrc: string;
@@ -25,18 +27,18 @@ const AdvantageItem = styled.div`
   display: flex;
   align-items: center;
   line-height: 1.5rem;
-  margin-bottom: 0.625rem;
+  margin: 0 0 0.625rem;
   width: 21.875rem;
-  @media (max-width: 480px) {
+  @media ${mobile} {
     width: 100%;
   }
   img {
-    margin-right: 1rem;
+    margin: 0 1rem 0 0;
   }
 `;
 
 const AdvantageItemDescription = styled.div`
-  @media (max-width: 480px) {
+  @media mobile {
     h5 {
       font-size: 1.25rem;
       font-weight: 600;

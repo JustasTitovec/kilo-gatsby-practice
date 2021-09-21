@@ -6,7 +6,7 @@ import { SideImages } from 'utils/images.ts';
 const Header: React.FC = () => {
   return (
     <Container className="header">
-      <img src={SideImages.yogaLogo} alt="yoga-logo" />
+      <img src={SideImages.yoga_logo} alt="yoga-logo" />
     </Container>
   );
 };

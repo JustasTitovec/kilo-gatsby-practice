@@ -1,24 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { primaryColor } from '../../styles/colors';
+import { primary } from '../../styles/colors';
 
 interface Props {
   children: any;
-  className?: string;
 }
 interface Styles {
   backgroundColor?: string;
 }
 
-export const Button: React.FC<Props> = ({ children, className }) => {
-  return <PrimaryButton className={className}>{children}</PrimaryButton>;
+export const Button: React.FC<Props> = ({ children }) => {
+  return <PrimaryButton>{children}</PrimaryButton>;
 };
 
 const PrimaryButton = styled.button<Styles>`
   padding: 0.5rem, 2.5rem, 0.5rem, 2.5rem;
   font-size: 1rem;
   color: #ffffff;
-  background-color: ${({ backgroundColor }) => backgroundColor || primaryColor};
+  background-color: ${({ backgroundColor }) => backgroundColor || primary};
   box-shadow: 0rem 1rem 2rem rgba(255, 155, 78, 0.24);
   border-radius: 0.5rem;
   width: 21.875rem;

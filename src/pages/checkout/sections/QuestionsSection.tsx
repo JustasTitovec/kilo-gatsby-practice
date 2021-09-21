@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 // Components imports
 import QuestionItem from '../elements/QuestionItem';
-import { SecondaryButton } from '../../../components/buttons/SecondaryButton';
-import data from '../../../data';
+import { SecondaryButton } from 'components/buttons/SecondaryButton';
+import data from 'data';
+// Breakpoints
+import { tablet } from 'styles/breakpoints';
 
 const QuestionsSection: React.FC = () => {
   const questions = data.questions;
@@ -38,7 +40,7 @@ const QuestionsContainer = styled.div`
 const Title = styled.h3`
   font-size: 1.5rem;
   margin: 0.5rem 0rem;
-  @media (max-width: 768px) {
+  @media ${tablet} {
     font-size: 1.25rem;
     width: 100%;
     padding: 0rem 1rem;

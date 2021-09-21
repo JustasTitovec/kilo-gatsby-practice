@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+// Breakpoints
+import { mobile } from 'styles/breakpoints';
 
 const PlansOrderCount: React.FC = () => {
   return (
@@ -15,7 +17,7 @@ const PlansOrderCountItem = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 3rem;
-  @media (max-width: 450px) {
+  @media ${mobile} {
     width: 100%;
     padding: 0rem 1rem;
     margin-top: 1rem;

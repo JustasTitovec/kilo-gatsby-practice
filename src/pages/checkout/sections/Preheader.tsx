@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images imports
-import { SideImages } from '../../../utils/images';
+import { SideImages } from 'utils/images';
 
 const Preheader: React.FC = () => {
   return (

@@ -3,15 +3,17 @@ import styled from 'styled-components';
 // Components imports
 import PlanCard from '../elements/PlanCard';
 import PlanBenefits from '../elements/PlanBenefits';
-import { Button } from '../../../components/buttons/Button';
+import { Button } from 'components/buttons/Button';
 // Images imports
-import { SideImages } from '../../../utils/images';
+import { SideImages } from 'utils/images';
 // Data from fetching information to component
-import data from '../../../data';
+import data from 'data';
 // Typography
-import { H3, Caption } from '../../../components';
+import { H3, Caption, TextWrapper } from 'components';
 // Colors
-import { primaryColor } from '../../../styles/colors';
+import { primary } from 'styles/colors';
+// Breakpoints
+import { mobile, tablet } from 'styles/breakpoints';
 interface Props {
   title: string;
 }
@@ -29,7 +31,9 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
         <Pricing>
           <H3>
             Choose your plan and get{' '}
-            <PricingTrial>7 days free trial</PricingTrial>
+            <TextWrapper color={primary} fontSize="1.5rem">
+              7 days free trial
+            </TextWrapper>
           </H3>
           {plansTypes.map((type, i) => {
             return (
@@ -63,7 +67,7 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
               By choosing a payment method you agree to the <span>T&Cs</span>{' '}
               and <span>Privacy Policy</span>
             </Caption>
-            <img src={SideImages.paymentMethods} alt="paymentMethods" />
+            <img src={SideImages.payment_methods} alt="paymentMethods" />
           </Terms>
         </Pricing>
         <BenefitsContainer>
@@ -87,13 +91,13 @@ const Subscriptions: React.FC<Props> = ({ title }) => {
 };
 
 const Container = styled.div`
-  @media (max-width: 768px) {
+  @media ${tablet} {
     padding: 1rem;
   }
 `;
 
 const PricingTrial = styled.span`
-  color: ${primaryColor};
+  color: ${primary};
 `;
 
 const BenefitsContainer = styled.div`
@@ -118,23 +122,22 @@ const Pricing = styled.div`
   h3 {
     font-size: 1.5rem;
     span {
-      color: ${(props) => props.theme.fontColour};
+      color: ${primary};
       font-weight: 700;
     }
   }
-  @media (max-width: 768px) {
+  @media ${tablet} {
     margin-right: 0rem;
-    width: 21.875rem;
     h3 {
       font-size: 1.25rem;
       margin: 1rem 0rem;
       line-height: 1.75rem;
       span {
-        color: ${(props) => props.theme.fontColour};
+        color: ${primary};
       }
     }
   }
-  @media (max-width: 450px) {
+  @media ${mobile} {
     width: 100%;
   }
 `;
@@ -152,15 +155,15 @@ const Terms = styled.div`
     width: 100%;
   }
   .screen-desktop {
-    @media (max-width: 768px) {
+    @media ${tablet} {
       display: none;
     }
   }
   .screen-mobile {
-    @media (max-width: 768px) {
+    @media ${tablet} {
       display: block;
     }
-    @media (min-width: 768px) {
+    @media ${tablet} {
       display: none;
     }
   }
@@ -171,10 +174,10 @@ const ContainerTitle = styled.h1`
   text-align: center;
   font-size: 2.5rem;
 
-  @media (max-width: 768px) {
+  @media ${tablet} {
     font-size: 1.75rem;
   }
-  @media (max-width: 450px) {
+  @media ${mobile} {
     text-align: left;
   }
 `;

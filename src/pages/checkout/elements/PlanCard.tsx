@@ -3,7 +3,9 @@ import styled from 'styled-components';
 // Images imports
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 // Colors
-import { primaryColor, textTransparent } from '../../../styles/colors';
+import { primary, textTransparent } from 'styles/colors';
+// Breakpoints
+import { mobile, smMobile } from 'styles/breakpoints';
 
 interface Props {
   planDuration: number;
@@ -27,7 +29,7 @@ const PlanCard: React.FC<Props> = ({
       onClick={() => setOption(index)}
       style={
         option === index
-          ? { border: `0.125rem solid ${primaryColor}` }
+          ? { border: `0.125rem solid ${primary}` }
           : { border: `0.125rem solid ${textTransparent}` }
       }
     >
@@ -77,10 +79,10 @@ const Option = styled.div`
   height: 8.125rem;
   border-radius: 1rem;
   padding: 1rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0 0 0;
   cursor: pointer;
 
-  @media (max-width: 480px) {
+  @media ${mobile} {
     height: 120px;
     width: 100%;
   }
@@ -119,7 +121,7 @@ const PlanItem = styled.div`
       font-weight: 700;
     }
   }
-  @media (max-width: 480px) {
+  @media ${mobile} {
     h5 {
       font-size: 0.938rem;
     }
@@ -142,16 +144,16 @@ const PricingDeal = styled.p`
   font-weight: 400;
   span {
     margin-left: 0.5rem;
-    color: ${primaryColor};
+    color: ${primary};
     font-weight: 700;
   }
-  @media (max-width: 320px) {
+  @media ${smMobile} {
     font-size: 12px;
   }
 `;
 
 const CheckIcon = styled(CheckCircleIcon)`
-  color: ${primaryColor};
+  color: ${primary};
 `;
 
 export default PlanCard;

@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 // Images imports
-import { SideImages } from '../../../utils/images';
-import { Caption, H5 } from '../../../components';
+import { SideImages } from 'utils/images';
+import { Caption, H5 } from 'components';
+// Breakpoints
+import { mobile, tablet } from 'styles/breakpoints';
 
 interface Props {
   name: string;
@@ -31,27 +33,27 @@ const SuccessStoryItem: React.FC<Props> = ({
       <Rating>
         <span>
           {ratingValue >= 1 ? (
-            <img src={SideImages.ratingStar} alt="start" />
+            <img src={SideImages.rating_star} alt="start" />
           ) : null}
         </span>
         <span>
           {ratingValue >= 2 ? (
-            <img src={SideImages.ratingStar} alt="start" />
+            <img src={SideImages.rating_star} alt="start" />
           ) : null}
         </span>
         <span>
           {ratingValue >= 3 ? (
-            <img src={SideImages.ratingStar} alt="start" />
+            <img src={SideImages.rating_star} alt="start" />
           ) : null}
         </span>
         <span>
           {ratingValue >= 4 ? (
-            <img src={SideImages.ratingStar} alt="start" />
+            <img src={SideImages.rating_star} alt="start" />
           ) : null}
         </span>
         <span>
           {ratingValue >= 5 ? (
-            <img src={SideImages.ratingStar} alt="start" />
+            <img src={SideImages.rating_star} alt="start" />
           ) : null}
         </span>
       </Rating>
@@ -71,11 +73,11 @@ const SuccessStory = styled.div`
   background: #ffffff;
   box-shadow: 0rem 1rem 2rem rgba(57, 53, 60, 0.08);
   border-radius: 1rem;
-  @media (max-width: 768px) {
+  @media ${tablet} {
     margin-bottom: 1rem;
     margin-right: 0rem;
   }
-  @media (max-width: 450px) {
+  @media ${mobile} {
     width: 100%;
   }
 `;
